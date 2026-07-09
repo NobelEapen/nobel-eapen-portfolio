@@ -269,7 +269,7 @@
         return;
       }
 
-      fetch("https://formspree.io/f/xojoorgk", {
+      fetch("https://formspree.io/f/xvzjjnoq", {
   method: "POST",
   body: new FormData(form),
   headers: { Accept: "application/json" }
