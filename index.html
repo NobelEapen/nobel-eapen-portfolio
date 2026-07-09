@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nobel Eapen — Project &amp; Program Management | ALTEN India</title>
+<meta name="description" content="Nobel Eapen — Project & Program Management consultant at ALTEN India. Driving complex projects from concept to delivery across Automotive and Life Sciences.">
+
+<!-- ============================================================
+     FONTS
+     Big Shoulders Display -> bold condensed headlines (industrial/structural character)
+     IBM Plex Sans         -> body copy (engineering-heritage typeface)
+     IBM Plex Mono         -> data labels, tags, blueprint-style annotations
+============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Skip link for keyboard / screen-reader users -->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================================================
+     LOADING SCREEN
+     A technical drawing "renders" itself in with a stroke animation
+     before the site reveals — nods to the engineering/blueprint theme.
+============================================================ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <svg class="loader__mark" viewBox="0 0 120 120" fill="none">
+    <circle class="loader__ring" cx="60" cy="60" r="46" stroke="currentColor" stroke-width="1.5"/>
+    <path class="loader__gear" d="M60 22V34M60 86V98M98 60H86M34 60H22M84.4 35.6L76 44M44 76L35.6 84.4M84.4 84.4L76 76M44 44L35.6 35.6"
+          stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <circle class="loader__hub" cx="60" cy="60" r="14" stroke="currentColor" stroke-width="2.5"/>
+  </svg>
+  <div class="loader__label">NOBEL<span class="loader__blip">_</span></div>
+  <div class="loader__bar"><span class="loader__bar-fill" id="loaderFill"></span></div>
+  <div class="loader__caption">LOADING SHEET 01 / 05</div>
+</div>
+
+<!-- Custom cursor (disabled automatically on touch devices via JS/CSS) -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- ============================================================
+     HEADER / NAV
+============================================================ -->
+<header class="site-header" id="siteHeader">
+  <div class="site-header__inner">
+    <a href="#home" class="logo" aria-label="Nobel — home">
+      <span class="logo__accent">N</span>OBEL EAPEN
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#global">Global Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero__bg" id="heroBg">
+      <!--
+        REPLACE ME: swap the background-image URL inside style.css (.hero__bg)
+        with your own high-res shot — a plant floor, EV test rig, or facility exterior
+        all work well. Keep it darker / desaturated so the headline stays legible.
+      -->
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+    </div>
+
+    <!-- corner registration marks + coordinate annotation: the "blueprint" signature motif.
+         Both coordinates are stacked on the RIGHT so nothing collides with the headline,
+         which is left-aligned and can run tall on shorter/wider viewports. -->
+    <div class="reg-mark reg-mark--tl" aria-hidden="true"></div>
+    <div class="reg-mark reg-mark--br" aria-hidden="true"></div>
+<div class="coord coord--right" aria-hidden="true" style="color: #ADD8E6;"> NAGPUR · 21.146°N — MECHANICAL ENG.<br> BATH · 51.381°N — AUTOMOTIVE ENG. + EV </div>
+    <div class="hero__layout">
+      <div class="hero__content">
+        <p class="eyebrow reveal">PROJECT &amp; PROGRAM MANAGEMENT — REV. 2026</p>
+        <h1 class="hero__title">
+          <span class="reveal">Driving Complex Projects</span>
+          <span class="reveal">from Concept to</span>
+          <span class="reveal"><em>Delivery.</em></span>
+        </h1>
+        <p class="hero__sub reveal">Project &amp; Program Management — Automotive &amp; Life Sciences</p>
+        <p class="hero__role reveal">Nobel Eapen — Project Consultant, ALTEN India</p>
+      </div>
+
+      <div class="hero__portrait reveal" aria-hidden="true">
+        <img src="images/hero-portrait.jpg" alt="">
+        <span class="hero__portrait-frame"></span>
+      </div>
+    </div>
+
+    <button class="scroll-cue" id="scrollCue" aria-label="Scroll to About section">
+      <span class="scroll-cue__track"><span class="scroll-cue__dot"></span></span>
+      <span class="scroll-cue__label">SCROLL</span>
+    </button>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section class="about" id="about">
+    <div class="sheet-head reveal">
+      <span class="sheet-head__no">SHEET&nbsp;01/05</span>
+      <span class="sheet-head__rule"></span>
+      <span class="sheet-head__title">About</span>
+    </div>
+
+    <div class="about__grid">
+      <div class="about__copy">
+        <h2 class="reveal">Precision engineering meets<br>program delivery.</h2>
+
+        <!--
+          REPLACE ME: this is starter bio copy built from the brief. Swap in your
+          own voice, specific companies/programs, and outcomes once you have them.
+        -->
+        <p class="reveal">
+          Nobel is a Project Consultant at ALTEN India, translating deep technical
+          grounding into project outcomes across two demanding industries: Life
+          Sciences manufacturing and Automotive Parts. The path started with a
+          Bachelor's in Mechanical Engineering from Nagpur University, followed
+          by a Master's in Automotive Engineering with Electric Propulsion at the
+          University of Bath — a foundation that shows up today in how programs
+          get scoped, sequenced, and shipped.
+        </p>
+        <p class="reveal">
+          Over 3+ years of national and global program work, spanning cross-cultural
+          teams, regulated manufacturing floors, and fast-moving EV development
+          cycles, Nobel has led cross-functional groups through the friction points
+          that stall complex programs — and out the other side, on time.
+        </p>
+
+        <div class="stat-row reveal">
+          <div class="stat">
+            <span class="stat__value">3<span class="stat__plus">+</span></span>
+            <span class="stat__dim" aria-hidden="true"></span>
+            <span class="stat__label">Years, Global &amp; National Programs</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">2</span>
+            <span class="stat__dim" aria-hidden="true"></span>
+            <span class="stat__label">Industries — Pharma &amp; Automotive</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">2</span>
+            <span class="stat__dim" aria-hidden="true"></span>
+            <span class="stat__label">Degrees — Nagpur &amp; Bath</span>
+          </div>
+        </div>
+
+        <ul class="credentials reveal">
+          <li><span>B.Eng.</span> Mechanical Engineering — Nagpur University</li>
+          <li><span>M.Sc.</span> Automotive Engineering, Electric Propulsion — University of Bath</li>
+          <li><span>Role</span> Senior Project Consultant — ALTEN India</li>
+        </ul>
+      </div>
+
+      <div class="about__figure reveal">
+        <div class="figure-frame">
+          <img src="images/about-portrait.jpg" alt="Nobel Eapen, Project Consultant at ALTEN India">
+          <span class="figure-frame__corner figure-frame__corner--tl" aria-hidden="true"></span>
+          <span class="figure-frame__corner figure-frame__corner--br" aria-hidden="true"></span>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS
+  ============================================================ -->
+  <section class="projects" id="projects">
+    <div class="sheet-head reveal">
+      <span class="sheet-head__no">SHEET&nbsp;02/05</span>
+      <span class="sheet-head__rule"></span>
+      <span class="sheet-head__title">Selected Work</span>
+    </div>
+    <p class="projects__intro reveal">
+      Seven programs across Automotive R&amp;D, Life Sciences manufacturing, and
+      enterprise strategy. Tap a sheet to open the full outline.
+    </p>
+
+    <div class="case-list">
+
+      <!-- ============ 01 — OPERATIONS TURNAROUND ============ -->
+      <article class="case-study reveal" id="case-01">
+        <button class="case-study__summary" aria-expanded="false" aria-controls="case-01-detail">
+          <span class="case-study__index">01</span>
+          <span class="case-study__media"><img src="https://images.unsplash.com/photo-1701328778019-e95dedbf5346?auto=format&fit=crop&w=900&q=80" alt=""></span>
+          <span class="case-study__intro">
+            <span class="case-study__sector">Operations // Life Sciences Packaging</span>
+            <span class="case-study__title">Operations Turnaround</span>
+            <span class="case-study__target">Target: +30% packaging efficiency in 18 months</span>
+          </span>
+          <span class="case-study__toggle" aria-hidden="true"><span class="case-study__toggle-icon">+</span><span class="case-study__toggle-label">View Outline</span></span>
+        </button>
+        <div class="case-study__detail-wrap" id="case-01-detail">
+          <div class="case-study__detail">
+            <blockquote>“Eliminating friction. Maximizing velocity. I stepped into a high-waste, high-downtime manufacturing environment and engineered a total operational reset.”</blockquote>
+            <div class="case-study__cols">
+              <div class="case-study__narrative">
+                <h4>The Mission</h4>
+                <p>A packaging facility hamstrung by sluggish cycles, compounding downtime, and quality leaks. The brief: audit the chaos, stabilize the baseline, and architect an aggressive turnaround.</p>
+                <h4>The Playbook</h4>
+                <ul class="playbook">
+                  <li><strong>Diagnostic Audit</strong> — isolated invisible bottlenecks fast.</li>
+                  <li><strong>Systems Overhaul</strong> — re-engineered layouts, unlocked hidden capacity.</li>
+                  <li><strong>Asset Optimization</strong> — shifted to predictive maintenance.</li>
+                  <li><strong>Workforce Upskilling</strong> — synchronized shop-floor execution to standard.</li>
+                </ul>
+              </div>
+              <div class="case-study__telemetry">
+                <h4>The Velocity</h4>
+                <div class="telemetry">
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__prefix">-</span><span class="metric__num" data-target="25">0</span><span class="metric__suffix">%</span></span>
+                    <span class="metric__label">Machine Breakdown</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__prefix">+</span><span class="metric__num" data-target="20">0</span><span class="metric__suffix">%</span></span>
+                    <span class="metric__label">Faster Product Changeover</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__prefix">-</span><span class="metric__num" data-target="33">0</span><span class="metric__suffix">%</span></span>
+                    <span class="metric__label">Material Waste Reduction</span>
+                  </div>
+                  <div class="metric metric--static">
+                    <span class="metric__value">ZERO</span>
+                    <span class="metric__label">Lag — workforce at peak performance</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ 02 — POWERTRAIN & KINEMATICS R&D ============ -->
+      <article class="case-study reveal" id="case-02">
+        <button class="case-study__summary" aria-expanded="false" aria-controls="case-02-detail">
+          <span class="case-study__index">02</span>
+          <span class="case-study__media"><img src="https://images.unsplash.com/photo-1546998557-f4da4a981c78?auto=format&fit=crop&w=900&q=80" alt=""></span>
+          <span class="case-study__intro">
+            <span class="case-study__sector">Automotive R&amp;D // Powertrain &amp; Kinematics</span>
+            <span class="case-study__title">Powertrain &amp; Kinematics R&amp;D</span>
+            <span class="case-study__target">Target: next-gen AWD transmission for a lightweight ATV</span>
+          </span>
+          <span class="case-study__toggle" aria-hidden="true"><span class="case-study__toggle-icon">+</span><span class="case-study__toggle-label">View Outline</span></span>
+        </button>
+        <div class="case-study__detail-wrap" id="case-02-detail">
+          <div class="case-study__detail">
+            <blockquote>“Rethinking drivetrain architecture. Stripping out systemic weight and complexity to engineer a high-traction, high-velocity terrain weapon.”</blockquote>
+            <div class="case-study__cols">
+              <div class="case-study__narrative">
+                <h4>The Mission</h4>
+                <p>Conventional off-road AWD setups lean on heavy, dual-differential architecture that compromises agility and cost. The mandate: an economically feasible, radically lighter drivetrain with zero performance trade-off.</p>
+                <h4>The Playbook</h4>
+                <ul class="playbook">
+                  <li><strong>Drivetrain Hybridization</strong> — tactical front/rear differential split.</li>
+                  <li><strong>Kinematic Tuning</strong> — engineered controlled oversteer for grip.</li>
+                  <li><strong>Material Validation</strong> — fatigue-tested under real-world loads (FEA).</li>
+                  <li><strong>Power-Band Lock</strong> — coupled to a CVT for peak RPM delivery.</li>
+                </ul>
+              </div>
+              <div class="case-study__telemetry">
+                <h4>The Velocity</h4>
+                <div class="telemetry">
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__num" data-target="2">0</span></span>
+                    <span class="metric__label">Axle Setup — lighter, more durable architecture</span>
+                  </div>
+                  <div class="metric metric--static">
+                    <span class="metric__value">PEAK</span>
+                    <span class="metric__label">Power delivery — near-instant torque bias, no electronic lag</span>
+                  </div>
+                  <div class="metric metric--static">
+                    <span class="metric__value">MIN.</span>
+                    <span class="metric__label">Structural weight &amp; BOM complexity</span>
+                  </div>
+                  <div class="metric metric--static">
+                    <span class="metric__value">MAX.</span>
+                    <span class="metric__label">Cornering — sharper turning radius, faster steering response</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ 03 — ALTERNATIVE PROPULSION SYSTEMS R&D ============ -->
+      <article class="case-study reveal" id="case-03">
+        <button class="case-study__summary" aria-expanded="false" aria-controls="case-03-detail">
+          <span class="case-study__index">03</span>
+          <span class="case-study__media"><img src="https://images.unsplash.com/photo-1654157925394-4b7809721149?auto=format&fit=crop&w=900&q=80" alt=""></span>
+          <span class="case-study__intro">
+            <span class="case-study__sector">Automotive R&amp;D // Alternative Propulsion</span>
+            <span class="case-study__title">Alternative Propulsion Systems R&amp;D</span>
+            <span class="case-study__target">Target: decarbonizing powertrains via hydrogen fuel cell architecture</span>
+          </span>
+          <span class="case-study__toggle" aria-hidden="true"><span class="case-study__toggle-icon">+</span><span class="case-study__toggle-label">View Outline</span></span>
+        </button>
+        <div class="case-study__detail-wrap" id="case-03-detail">
+          <div class="case-study__detail">
+            <blockquote>“Engineering the end of emissions. Wiping out the internal combustion blueprint of a production hybrid platform to architect an uncompromised Hydrogen FCEV powertrain.”</blockquote>
+            <div class="case-study__cols">
+              <div class="case-study__narrative">
+                <h4>The Mission</h4>
+                <p>Plug-in hybrids bridge a gap, but still carry a real lifecycle emissions penalty. The mandate: eliminate the combustion footprint of a production vehicle (Toyota Prius PHEV) with a clean-sheet, zero-local-emission FCEV system — no range or packaging trade-off.</p>
+                <h4>The Playbook</h4>
+                <ul class="playbook">
+                  <li><strong>Clean-Sheet Conversion</strong> — combustion out, FCEV drive in.</li>
+                  <li><strong>System Integration</strong> — fuel cell stack, PCU, and storage packaged.</li>
+                  <li><strong>Energy Optimization</strong> — battery and stack chemistry balanced.</li>
+                  <li><strong>Lifecycle Validation</strong> — full WLTC drive-cycle simulation.</li>
+                </ul>
+              </div>
+              <div class="case-study__telemetry">
+                <h4>The Velocity</h4>
+                <div class="telemetry">
+                  <div class="metric metric--static">
+                    <span class="metric__value">0.0g</span>
+                    <span class="metric__label">Tailpipe emissions — 100% recyclable water vapor</span>
+                  </div>
+                  <div class="metric metric--static">
+                    <span class="metric__value">-30–50%</span>
+                    <span class="metric__label">Total lifecycle carbon, cradle-to-grave</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__num" data-target="768">0</span></span>
+                    <span class="metric__label">Mile combined range</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__num" data-target="4">0</span><span class="metric__suffix">-min</span></span>
+                    <span class="metric__label">Refueling loop</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ 04 — HIGH-PRECISION 3D SCANNING ============ -->
+      <article class="case-study reveal" id="case-04">
+        <button class="case-study__summary" aria-expanded="false" aria-controls="case-04-detail">
+          <span class="case-study__index">04</span>
+          <span class="case-study__media"><img src="https://images.unsplash.com/photo-1676310149114-3f6310957ca6?auto=format&fit=crop&w=900&q=80" alt=""></span>
+          <span class="case-study__intro">
+            <span class="case-study__sector">Manufacturing Tech // Metrology</span>
+            <span class="case-study__title">High-Precision 3D Scanning for Reflective Components</span>
+            <span class="case-study__target">Target: fast, automated QC for reflective sheet-metal geometries</span>
+          </span>
+          <span class="case-study__toggle" aria-hidden="true"><span class="case-study__toggle-icon">+</span><span class="case-study__toggle-label">View Outline</span></span>
+        </button>
+        <div class="case-study__detail-wrap" id="case-04-detail">
+          <div class="case-study__detail">
+            <blockquote>“Traditional structured-light scanners lose signal on shiny factory components. The objective: a fast, flexible, ultra-low-cost metrology pipeline with zero optical interference.”</blockquote>
+            <div class="case-study__cols">
+              <div class="case-study__narrative">
+                <h4>The Mission</h4>
+                <p>Eradicate the optical limitations and cost of industrial 3D scanners on reflective sheet metal, without sacrificing spatial accuracy.</p>
+                <h4>The Playbook</h4>
+                <ul class="playbook">
+                  <li><strong>Glare Elimination</strong> — physical matrix bypassed optical noise.</li>
+                  <li><strong>Photogrammetric Capture</strong> — smartphone-only 360° point cloud.</li>
+                  <li><strong>Cloud Stitching</strong> — automated high-res mesh generation.</li>
+                  <li><strong>Fine Registration</strong> — ICP-aligned against reference CAD.</li>
+                </ul>
+              </div>
+              <div class="case-study__telemetry">
+                <h4>The Velocity</h4>
+                <div class="telemetry">
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__num" data-target="93">0</span><span class="metric__suffix">%</span></span>
+                    <span class="metric__label">Cost reduction — £4,500 → £315</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__num" data-target="4.6" data-decimals="1">0</span><span class="metric__suffix">x</span></span>
+                    <span class="metric__label">Accuracy leap vs. industrial scanner</span>
+                  </div>
+                  <div class="metric metric--static">
+                    <span class="metric__value">0.21cm</span>
+                    <span class="metric__label">RMSE, vs. 0.96cm industrial baseline</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ 05 — PRECISION MANUFACTURING TURNAROUND ============ -->
+      <article class="case-study reveal" id="case-05">
+        <button class="case-study__summary" aria-expanded="false" aria-controls="case-05-detail">
+          <span class="case-study__index">05</span>
+          <span class="case-study__media"><img src="https://images.unsplash.com/photo-1748002388689-c62b45d5c28b?auto=format&fit=crop&w=900&q=80" alt=""></span>
+          <span class="case-study__intro">
+            <span class="case-study__sector">Pharma Operations // Root Cause Failure Analysis</span>
+            <span class="case-study__title">Precision Manufacturing Turnaround</span>
+            <span class="case-study__target">Target: root-cause a tablet compression failure, rescue yield</span>
+          </span>
+          <span class="case-study__toggle" aria-hidden="true"><span class="case-study__toggle-icon">+</span><span class="case-study__toggle-label">View Outline</span></span>
+        </button>
+        <div class="case-study__detail-wrap" id="case-05-detail">
+          <div class="case-study__detail">
+            <blockquote>“Micro-precision. Zero-waste. Root-causing a persistent tablet compression failure to rescue product yield and unlock batch-level cost savings.”</blockquote>
+            <div class="case-study__cols">
+              <div class="case-study__narrative">
+                <h4>The Mission</h4>
+                <p>A high-volume pharma line was crippled by chronic tablet sticking and weight variance — waste, failed QC thresholds, and costly stoppages. The objective: stabilize the compression physics and halt the financial bleed.</p>
+                <h4>The Playbook</h4>
+                <ul class="playbook">
+                  <li><strong>Mechanical Sync</strong> — micro-calibrated compression tooling.</li>
+                  <li><strong>Force Optimization</strong> — hardcoded tonnage limits, zero trip-outs.</li>
+                  <li><strong>Continuous Flow</strong> — single-shot batch processing.</li>
+                  <li><strong>Defect Architecture</strong> — realigned punches, tightened inspection gates.</li>
+                </ul>
+              </div>
+              <div class="case-study__telemetry">
+                <h4>The Velocity</h4>
+                <div class="telemetry">
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__num" data-target="98">0</span><span class="metric__suffix">%</span></span>
+                    <span class="metric__label">Compression line yield, up from 88%</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__prefix">£</span><span class="metric__num" data-target="200000" data-format="comma">0</span><span class="metric__suffix">+</span></span>
+                    <span class="metric__label">Campaign rescue across 20+ batches</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__prefix">-</span><span class="metric__num" data-target="33">0</span><span class="metric__suffix">%</span></span>
+                    <span class="metric__label">Stoppage &amp; tool-sticking deficit</span>
+                  </div>
+                  <div class="metric metric--static">
+                    <span class="metric__value">ZERO</span>
+                    <span class="metric__label">Threshold violations — full compliance</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ 06 — HIGH-RISK SUPPLY CHAIN RECOVERY ============ -->
+      <article class="case-study reveal" id="case-06">
+        <button class="case-study__summary" aria-expanded="false" aria-controls="case-06-detail">
+          <span class="case-study__index">06</span>
+          <span class="case-study__media"><img src="https://images.unsplash.com/photo-1748000970909-845f4aa144d2?auto=format&fit=crop&w=900&q=80" alt=""></span>
+          <span class="case-study__intro">
+            <span class="case-study__sector">Pharma Operations // Crisis Management</span>
+            <span class="case-study__title">High-Risk Supply Chain Recovery</span>
+            <span class="case-study__target">Target: salvage a 75-batch global contract on a hyper-compressed timeline</span>
+          </span>
+          <span class="case-study__toggle" aria-hidden="true"><span class="case-study__toggle-icon">+</span><span class="case-study__toggle-label">View Outline</span></span>
+        </button>
+        <div class="case-study__detail-wrap" id="case-06-detail">
+          <div class="case-study__detail">
+            <blockquote>“Averted total line failure. Re-engineering process parameters under hyper-compressed timelines to salvage a critical 75-batch global contract.”</blockquote>
+            <div class="case-study__cols">
+              <div class="case-study__narrative">
+                <h4>The Mission</h4>
+                <p>Compounding failures — jamming, capping, sticking, powder waste — put a flagship product's line, and a rigid 75-batch client deadline, at extreme risk. The objective: isolate the friction points and restore velocity, immediately.</p>
+                <h4>The Playbook</h4>
+                <ul class="playbook">
+                  <li><strong>Flow Control</strong> — automated powder metering.</li>
+                  <li><strong>Seizure Mitigation</strong> — aggressive mid-campaign decontamination.</li>
+                  <li><strong>Force &amp; Lubrication</strong> — re-mapped recipe, tighter tool care.</li>
+                  <li><strong>Capacity Scaling</strong> — parallel rooms, rapid turret swaps.</li>
+                </ul>
+              </div>
+              <div class="case-study__telemetry">
+                <h4>The Velocity</h4>
+                <div class="telemetry">
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__num" data-target="60">0</span><span class="metric__suffix">/75</span></span>
+                    <span class="metric__label">Batches secured on the critical window</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__num" data-target="1">0</span></span>
+                    <span class="metric__label">Multi-million-dollar contract rescued</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__num" data-target="100">0</span><span class="metric__suffix">%</span></span>
+                    <span class="metric__label">Quality adherence — repeat contract in 12mo</span>
+                  </div>
+                  <div class="metric metric--static">
+                    <span class="metric__value">ZERO</span>
+                    <span class="metric__label">Seizure downtime, post-recovery</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ 07 — STRATEGIC WORKFORCE ENABLEMENT ============ -->
+      <article class="case-study reveal" id="case-07">
+        <button class="case-study__summary" aria-expanded="false" aria-controls="case-07-detail">
+          <span class="case-study__index">07</span>
+          <span class="case-study__media"><img src="https://images.unsplash.com/photo-1622675363311-3e1904dc1885?auto=format&fit=crop&w=900&q=80" alt=""></span>
+          <span class="case-study__intro">
+            <span class="case-study__sector">Operations &amp; Resource Strategy // Enterprise Scalability</span>
+            <span class="case-study__title">Strategic Workforce Enablement</span>
+            <span class="case-study__target">Target: cut deployment latency for consultants entering regulated sectors</span>
+          </span>
+          <span class="case-study__toggle" aria-hidden="true"><span class="case-study__toggle-icon">+</span><span class="case-study__toggle-label">View Outline</span></span>
+        </button>
+        <div class="case-study__detail-wrap" id="case-07-detail">
+          <div class="case-study__detail">
+            <blockquote>“Accelerating time-to-value. Architecting multi-sector engineering playbooks to slash deployment latency and embed consultants with day-one tactical confidence.”</blockquote>
+            <div class="case-study__cols">
+              <div class="case-study__narrative">
+                <h4>The Mission</h4>
+                <p>Deploying consultants into regulated sectors — Defence, Aerospace, Energy — demands flawless technical onboarding. The challenge: map unfamiliar domains, manage confidentiality, and build a readiness framework that kills deployment lag.</p>
+                <h4>The Playbook</h4>
+                <ul class="playbook">
+                  <li><strong>Diagnostic Intelligence</strong> — audited five core industrial sectors.</li>
+                  <li><strong>SME Validation</strong> — cross-checked with top-tier experts.</li>
+                  <li><strong>Pedagogical Design</strong> — high-retention learning storyboard.</li>
+                  <li><strong>Competency Gates</strong> — Q&amp;A checkpoints before deployment.</li>
+                </ul>
+              </div>
+              <div class="case-study__telemetry">
+                <h4>The Velocity</h4>
+                <div class="telemetry">
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__num" data-target="15">0</span></span>
+                    <span class="metric__label">Days: onboarding → billable deployment</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__num" data-target="100">0</span><span class="metric__suffix">%</span></span>
+                    <span class="metric__label">Elite client satisfaction rating</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric__value"><span class="metric__num" data-target="5">0</span></span>
+                    <span class="metric__label">Key industries consolidated</span>
+                  </div>
+                  <div class="metric metric--static">
+                    <span class="metric__value">ZERO</span>
+                    <span class="metric__label">Security breaches, full compliance</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GLOBAL EXPERIENCE & METHODOLOGIES
+  ============================================================ -->
+  <section class="global" id="global">
+    <div class="sheet-head reveal">
+      <span class="sheet-head__no">SHEET&nbsp;03/05</span>
+      <span class="sheet-head__rule"></span>
+      <span class="sheet-head__title">Global Experience &amp; Methodologies</span>
+    </div>
+
+    <div class="ticker reveal" aria-hidden="true">
+      <div class="ticker__track" id="tickerTrack">
+        <span>INDIA</span><i>+</i><span>UNITED KINGDOM</span><i>+</i><span>FRANCE</span><i>+</i>
+      </div>
+    </div>
+
+    <p class="global__intro reveal">
+      A career shaped by three countries: an engineering foundation in India, a
+      Master's and automotive R&amp;D in the United Kingdom, and program delivery
+      alongside ALTEN's French engineering heritage.
+    </p>
+
+    <div class="pillars">
+      <div class="pillar reveal">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+          <path d="M24 14V24L31 28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Timeline Execution</h3>
+        <p>Sequencing dependencies so programs land on the date they were promised.</p>
+      </div>
+      <div class="pillar reveal">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <rect x="8" y="10" width="32" height="28" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 18H40M16 25H24M16 31H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <h3>Budgeting</h3>
+        <p>Tracking spend against scope so cost surprises get caught early, not late.</p>
+      </div>
+      <div class="pillar reveal">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M24 6L42 16V30L24 42L6 30V16L24 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M24 18V26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="24" cy="32" r="1.6" fill="currentColor"/>
+        </svg>
+        <h3>Risk Mitigation</h3>
+        <p>Naming the failure modes before the program does, and planning around them.</p>
+      </div>
+      <div class="pillar reveal">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M8 14H34V28H18L10 35V28H8V14Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M40 20V33L34 33" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Stakeholder Communication</h3>
+        <p>One clear source of truth for plant floor, program office, and client alike.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section class="contact" id="contact">
+    <div class="sheet-head sheet-head--light reveal">
+      <span class="sheet-head__no">SHEET&nbsp;04/05</span>
+      <span class="sheet-head__rule"></span>
+      <span class="sheet-head__title">Contact</span>
+    </div>
+
+    <h2 class="contact__cta reveal">Let's Build<br>the Future.</h2>
+
+    <div class="contact__grid">
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="details">Project Details</label>
+          <textarea id="details" name="details" rows="4" required></textarea>
+        </div>
+        <!--
+          REPLACE ME: this form has no backend yet. Wire it to Formspree, Netlify
+          Forms, or your own endpoint — see the comment beside the JS handler
+          in script.js for the one line to change.
+        -->
+        <button type="submit" class="btn-submit">
+          <span>Send Message</span>
+        </button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="contact-links reveal">
+        <a href="https://www.linkedin.com/in/nobel-eapen/" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link__label">LinkedIn</span>
+          <span class="contact-link__arrow">↗</span>
+        </a>
+        <a href="mailto:nobeleapen@gmail.com" class="contact-link">
+          <span class="contact-link__label">Email</span>
+          <span class="contact-link__arrow">↗</span>
+        </a>
+        <div class="contact-note">
+          <span class="mono-tag">BASED IN</span>
+          <p>India — available for on-site and remote program work globally.</p>
+        </div>
+        <div class="contact-photo">
+          <img src="images/contact-portrait.jpg" alt="Nobel Eapen at ALTEN India">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <span>© <span id="year"></span> Nobel Eapen. All rights reserved.</span>
+    <span class="site-footer__sheet">SHEET&nbsp;05/05 </span>
+    <a href="#home" class="back-to-top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
