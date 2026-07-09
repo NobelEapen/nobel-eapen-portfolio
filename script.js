@@ -269,11 +269,22 @@
         return;
       }
 
-      // REPLACE ME — send `new FormData(form)` to your endpoint here, e.g.:
-      // fetch("https://formspree.io/f/your-id", { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
-
+      fetch("https://formspree.io/f/xojoorgk", {
+  method: "POST",
+  body: new FormData(form),
+  headers: { Accept: "application/json" }
+})
+  .then((response) => {
+    if (response.ok) {
       status.textContent = "Message received — I'll be in touch shortly.";
       form.reset();
+    } else {
+      status.textContent = "Something went wrong — please email me directly instead.";
+    }
+  })
+  .catch(() => {
+    status.textContent = "Something went wrong — please email me directly instead.";
+  });
     });
   })();
 
